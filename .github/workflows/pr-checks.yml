@@ -2,7 +2,7 @@ name: PR checks
 on:
   pull_request:
     branches:
-      - master
+      - main
 jobs:
   lint-and-types-and-test:
     runs-on: ubuntu-latest
