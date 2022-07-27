@@ -21,3 +21,8 @@ yarn create vite --template ts-react
 ```
 
 which conveniently handles code bundling and application serving.
+
+# Tooling
+
+- ESLint - using mostly default settings and `*recommened` packages. Ensures a minimum level of code quality.
+- Prettier - using default settings. Ensures consistent formatting
