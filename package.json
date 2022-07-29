@@ -16,7 +16,8 @@
     "format:check": "prettier --check .",
     "format:fix": "prettier --write .",
     "fix": "yarn lint:fix; yarn format:fix",
-    "ci": "yarn lint:check && yarn lint:fix"
+    "types:check": "tsc",
+    "ci": "yarn lint:check && yarn format:check && yarn types:check"
   },
   "dependencies": {
     "react": "18.2.0",
