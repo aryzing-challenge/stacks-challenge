@@ -158,13 +158,20 @@ const AppWithoutProviders = () => {
           <>
             <Container>
               <Stack>
-                {Object.keys(balancesQuery.data.non_fungible_tokens).map(
-                  (k) => (
-                    <Card shadow="xs" key={k}>
-                      <Text weight={700}>{k.split("::")[1]}</Text>
-                      <Code>{k}</Code>
-                    </Card>
+                {Object.keys(balancesQuery.data.non_fungible_tokens).length >
+                0 ? (
+                  Object.keys(balancesQuery.data.non_fungible_tokens).map(
+                    (k) => (
+                      <Card shadow="xs" key={k}>
+                        <Text weight={700}>{k.split("::")[1]}</Text>
+                        <Code>{k}</Code>
+                      </Card>
+                    )
                   )
+                ) : (
+                  <Card shadow="xs">
+                    <Text>This principal has no NFTs.</Text>
+                  </Card>
                 )}
               </Stack>
             </Container>
