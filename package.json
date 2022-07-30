@@ -21,7 +21,7 @@
     "test:integration": "yarn build && start-server-and-test 'yarn preview' http://localhost:5000 'CYPRESS_BASE_URL=http://localhost:5000 yarn cy:run'",
     "ci": "yarn lint:check && yarn format:check && yarn types:check && yarn test:unit && yarn test:integration",
     "cy:run": "cypress run",
-    "cy:open": "cypress open"
+    "cy:open": "yarn cypress open"
   },
   "dependencies": {
     "@emotion/react": "11.9.3",
@@ -44,7 +44,7 @@
     "@typescript-eslint/eslint-plugin": "5.31.0",
     "@typescript-eslint/parser": "5.31.0",
     "@vitejs/plugin-react": "2.0.0",
-    "cypress": "10.3.1",
+    "cypress": "^10.3.1",
     "eslint": "8.20.0",
     "eslint-config-prettier": "8.5.0",
     "eslint-plugin-import": "2.26.0",
