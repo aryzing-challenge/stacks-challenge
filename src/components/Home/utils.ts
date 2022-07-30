@@ -7,11 +7,14 @@ export const validatePrincipal = (principal: string) =>
  * Adapter between @stacks/blockchain-api-client and react-query data & error
  * formats.
  */
-export const getDataOrError = <T>(p: Promise<T>) => {
+export const getDataOrError = <T>(fn: () => Promise<T>) => {
   return async () => {
     try {
-      return await p;
+      return await fn();
     } catch (err) {
+      if (err instanceof Error) {
+        throw err.message;
+      }
       const error = (await (err as Response).json()).error;
       throw error;
     }

@@ -42,7 +42,7 @@ export const Home = () => {
     string
   >(
     ["balances", form.values.net, form.values.principal],
-    getDataOrError(
+    getDataOrError(() =>
       accountsApi.getAccountBalance({
         principal: form.values.principal,
       })

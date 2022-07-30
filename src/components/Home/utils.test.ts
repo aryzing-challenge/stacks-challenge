@@ -27,9 +27,11 @@ describe("Utils", () => {
       const promiseWithData = Promise.resolve("some data");
       const promiseWithError = Promise.reject(new Response());
 
-      expect(await getDataOrError(promiseWithData)()).toBe("some data");
+      expect(await getDataOrError(() => promiseWithData)()).toBe("some data");
 
-      getDataOrError(promiseWithError)().catch((e) => expect(e).toBe("oops"));
+      getDataOrError(() => promiseWithError)().catch((e) =>
+        expect(e).toBe("oops")
+      );
     });
   });
 });
