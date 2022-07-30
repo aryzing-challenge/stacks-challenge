@@ -1,5 +1,6 @@
 import {
   Alert,
+  Button,
   Card,
   Code,
   Container,
@@ -97,6 +98,11 @@ export const Home = () => {
                 }
                 {...form.getInputProps("principal")}
               />
+            </Container>
+            <Container>
+              <Button type="submit" disabled={balancesQuery.isFetching}>
+                Search NFTs
+              </Button>
             </Container>
           </Stack>
         </form>
